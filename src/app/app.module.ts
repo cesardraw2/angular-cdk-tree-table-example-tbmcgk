@@ -8,6 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app/app.component';
 import { SharedModule } from './app/shared-module';
+import { AclService } from './services/acl.service';
 
 @NgModule({
   imports: [
@@ -22,7 +23,7 @@ import { SharedModule } from './app/shared-module';
   entryComponents: [AppComponent],
   declarations: [AppComponent],
   bootstrap: [AppComponent],
-  providers: [],
+  providers: [AclService],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppModule {}

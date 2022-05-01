@@ -1,39 +1,13 @@
-import './polyfills';
-
-import { HttpClientModule } from '@angular/common/http';
-import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatNativeDateModule } from '@angular/material/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { AppComponent } from './app/app.component';
-import { SharedModule } from './app/shared-module';
+import { AppModule } from './app/app.module';
+import { environment } from './environments/environment';
 
-
-@NgModule({
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    FormsModule,
-    HttpClientModule,
-    SharedModule,
-    MatNativeDateModule,
-    ReactiveFormsModule,
-  ],
-  entryComponents: [AppComponent],
-  declarations: [AppComponent],
-  bootstrap: [AppComponent],
-  providers: [],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
-})
-export class AppModule {}
+if (environment.production) {
+  enableProdMode();
+}
 
 platformBrowserDynamic()
   .bootstrapModule(AppModule)
-  .catch((err) => console.error(err));
-
-/**  Copyright 2019 Google LLC. All Rights Reserved.
-    Use of this source code is governed by an MIT-style license that
-    can be found in the LICENSE file at http://angular.io/license */
+  .catch((err) => console.log(err));

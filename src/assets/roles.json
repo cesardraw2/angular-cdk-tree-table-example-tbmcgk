@@ -1,0 +1,47 @@
+{
+  "name": "Perfis de Acesso",
+  "enabled": true,
+  "type": "role",
+  "children": [
+    {
+      "name": "GUEST",
+      "type": "role",
+
+      "functionalities": [
+        {
+          "name": "Funcionalidade A",
+          "enabled": true,
+          "expandable": true
+        }
+      ],
+      "roles": [
+        {
+          "name": "GPD_GESTOR",
+          "type": "role",
+
+          "functionalities": [
+            {
+              "name": "Funcionalidade B",
+              "enabled": true,
+              "expandable": true
+            }
+          ],
+          "roles": null
+        },
+        {
+          "name": "GPD_GESTOR_ADM",
+          "type": "role",
+
+          "functionalities": [
+            {
+              "name": "Funcionalidade B",
+              "enabled": true,
+              "expandable": true
+            }
+          ],
+          "roles": []
+        }
+      ]
+    }
+  ]
+}
